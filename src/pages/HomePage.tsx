@@ -17,14 +17,18 @@ const HomePage = () => {
   return (
     <section className="home-page">
       <Container>
-        <Button onClick={() => setIsOpen(true)} variant="contained">
-          Нове замовлення
-        </Button>
-        <Button onClick={() => generatePdf(orders)} variant="contained">
-          Експорт
-        </Button>
+        <div className="wrapper-btn">
+          <Button onClick={() => setIsOpen(true)} variant="contained">
+            Нове замовлення
+          </Button>
+          <Button onClick={() => generatePdf(orders)} variant="contained">
+            Експорт
+          </Button>
+        </div>
 
-        <DataTable />
+        <div className="wrapper-table">
+          <DataTable />
+        </div>
 
         <BasicModal
           title="Створення замовлення"
