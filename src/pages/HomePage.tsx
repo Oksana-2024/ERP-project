@@ -4,20 +4,24 @@ import DataTable from "../components/DataTable/DataTable";
 import BasicModal from "../components/mui/ModalBase";
 import OrderForm from "../components/OrderForm/OrderForm";
 import { useState } from "react";
+import { generatePdf } from "../helpers/pdf";
+import { useSelector } from "react-redux";
+import { selectOrders } from "../store/orders/selectors";
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => {
     setIsOpen(false);
   };
+  const orders = useSelector(selectOrders);
   return (
     <section className="home-page">
       <Container>
-        <Button
-          onClick={() => setIsOpen(true)}
-          variant="contained"
-        >
+        <Button onClick={() => setIsOpen(true)} variant="contained">
           Нове замовлення
+        </Button>
+        <Button onClick={() => generatePdf(orders)} variant="contained">
+          Експорт
         </Button>
 
         <DataTable />
