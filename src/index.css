@@ -1,0 +1,146 @@
+@import "modern-normalize/modern-normalize.css";
+
+:root {
+  --font-manrope: "Manrope", sans-serif;
+  --new: #4caf50;
+  --pending: #42a5f5;
+  --done: #c280ca;
+  --main-color: #262626;
+  --main-bg: #f9f9f9;
+  --border: rgba(198, 209, 204, 0.897);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-manrope);
+  color: var(--main-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+.tr {
+  display: table-row;
+  background-color: var(--color);
+}
+
+.th,
+.td {
+  display: table-cell;
+  text-align: start;
+  vertical-align: middle;
+  padding: 4px 12px;
+  border: 2px double var(--border);
+}
+
+.table .td[data-column-id="edit"],
+.table .td[data-column-id="delete"] {
+  text-align: center;
+}
+
+.th {
+  font-weight: bold;
+  background-color: var(--main-bg);
+}
+
+.status-new {
+  background-color: var(--new);
+}
+.status-pending {
+  background-color: var(--pending);
+}
+.status-done {
+  background-color: var(--done);
+}
+
+.status-new,
+.status-pending,
+.status-done {
+  padding: 2px 8px;
+  border-radius: 30px;
+  white-space: nowrap;
+  color: var(--main-bg);
+}
+
+.home-page {
+  padding-top: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-title {
+  margin-bottom: 24px;
+}
