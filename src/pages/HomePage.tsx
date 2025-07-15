@@ -22,7 +22,7 @@ const HomePage = () => {
             Нове замовлення
           </Button>
           <Button onClick={() => generatePdf(orders)} variant="contained">
-            Експорт
+            Експорт в PDF
           </Button>
         </div>
 
